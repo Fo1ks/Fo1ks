@@ -40,6 +40,7 @@ class FragmentResponse : Fragment() {
             scope.launch {
                 val post = withContext(Dispatchers.IO) { api.createPost(Post(userId, title, body)) }
                 binding.progress.visibility = View.GONE
+                //
                 binding.Response.text = "id = ${post.id}\nuserId = ${post.userId}\ntitle = ${post.title}\nbody = ${post.body}"
             }
         }
